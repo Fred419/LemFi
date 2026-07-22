@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login to your account</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="screen">
+      <button class="back" aria-label="Back" onclick="history.back()">←</button>
+
+      <h1>Login to your account</h1>
+
+      <form id="loginForm" novalidate>
+        <label class="field-label" for="phone">Phone number</label>
+        <div class="phone-row">
+          <div class="country" id="countryToggle" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" aria-label="Select country">
+            <span class="flag" id="flagSlot" aria-hidden="true"></span>
+            <span class="dial" id="dialSlot">+44</span>
+            <span class="chev">⌄</span>
+            <ul class="country-menu" id="countryMenu" role="listbox">
+              <li role="option" data-code="GB" data-dial="+44" tabindex="0">
+                <span class="flag-sm" data-flag="GB"></span>
+                <span class="c-name">United Kingdom</span>
+                <span class="c-dial">+44</span>
+              </li>
+              <li role="option" data-code="US" data-dial="+1" tabindex="0">
+                <span class="flag-sm" data-flag="US"></span>
+                <span class="c-name">United States</span>
+                <span class="c-dial">+1</span>
+              </li>
+              <li role="option" data-code="CA" data-dial="+1" tabindex="0">
+                <span class="flag-sm" data-flag="CA"></span>
+                <span class="c-name">Canada</span>
+                <span class="c-dial">+1</span>
+              </li>
+            </ul>
+          </div>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            inputmode="tel"
+            autocomplete="tel"
+            placeholder="Phone number"
+            required
+          />
+        </div>
+
+        <label class="field-label" for="password">Password</label>
+        <div class="password-row">
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+          />
+          <button type="button" class="eye" id="toggleEye" aria-label="Show password">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 13c3-4 6-6 9-6s6 2 9 6" />
+              <path d="M8 15l-1 2" />
+              <path d="M16 15l1 2" />
+              <path d="M12 16v2" />
+            </svg>
+          </button>
+        </div>
+
+        <p class="trouble">
+          Trouble logging in? <a href="#">Recover your account</a>
+        </p>
+
+        <div id="formMsg" class="form-msg" role="status" aria-live="polite"></div>
+
+        <button type="submit" id="submitBtn" class="submit" disabled>Log in</button>
+
+        <p class="signup">
+          Don't have an account? <a href="#">Sign up</a>
+        </p>
+      </form>
+    </main>
+
+    <div id="appNotice" class="app-notice" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="app-notice-card">
+        <div class="app-notice-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="2" width="12" height="20" rx="2.5"/>
+            <line x1="11" y1="18" x2="13" y2="18"/>
+          </svg>
+        </div>
+        <p class="app-notice-text">Please use our mobile app to sign in and to view all activities on your account.</p>
+        <button type="button" class="app-notice-ok" id="appNoticeOk">OK</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
